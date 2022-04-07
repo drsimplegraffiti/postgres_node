@@ -64,6 +64,37 @@ app.get("/leaderboards/:game", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+app.delete("/:board_id", async (req, res) => {
+  try {
+    const { board_id } = req.params;
+    const board = await pool.query(
+      "DELETE FROM leaderboards WHERE board_id = $1",
+      [board_id]
+    );
+    res.status(200).json(board.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+app.put("/update/:board_id", async (req, res) => {
+  try {
+    const board_id = req.params.board_id;
+
+    const { player, score } = req.body;
+
+    const response = await pool.query(
+      "UPDATE leaderboards SET player = $1, score = $2 WHERE board_id = $3",
+      [player, score, board_id]
+    );
+    res.json("User Updated Successfully");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

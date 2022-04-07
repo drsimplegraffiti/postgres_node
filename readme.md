@@ -29,7 +29,7 @@
 
 ##### INSERT INTO leaderboards
 
-> INSERT INTO leaderboards(game, player, score) VALUES ('pokemon', 'Tope', 10);
+> INSERT INTO leaderboards(game, player, score) VALUES ("pokemon", "Tope', 10),("pokemon", "Tope", 20);
 
 ##### Heroku deploy
 
