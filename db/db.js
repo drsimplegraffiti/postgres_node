@@ -9,11 +9,11 @@ const poolConfig = process.env.DATABASE_URL
       },
     }
   : {
-      user: "postgres",
-      password: "Bassguitar1",
-      host: "localhost",
-      port: "5432",
-      database: "leaderboard",
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      host: process.env.HOST,
+      port: process.env.DB_PORT,
+      database: process.env.DB_database,
     };
 
 const pool = new Pool(poolConfig);
