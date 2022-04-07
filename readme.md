@@ -46,3 +46,15 @@
 Then, run:
 
 > heroku pg:psql
+
+##### .env example
+
+```
+PORT=
+DB_USER=
+DB_PASSWORD=
+DB_PORT=
+HOST=
+DB_database=
+
+```
