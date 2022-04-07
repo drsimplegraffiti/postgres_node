@@ -33,7 +33,16 @@
 
 ##### Heroku deploy
 
-heroku login
-heroku create [app name]
-git push heroku main
-heroku addons:create heroku-postgresql:hobby-dev
+- heroku login
+- heroku create [app name]
+- git push heroku main
+
+#### Set/Link data base to heroku database
+
+- heroku addons:create heroku-postgresql:hobby-dev
+
+[provision a database for postgresql](https://devcenter.heroku.com/articles/heroku-postgresql)
+
+Then, run:
+
+> heroku pg:psql
