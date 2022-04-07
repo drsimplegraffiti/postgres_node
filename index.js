@@ -17,6 +17,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.get("/leaderboards", async (req, res) => {
   try {
     const boards = await pool.query("SELECT * FROM Leaderboards");
