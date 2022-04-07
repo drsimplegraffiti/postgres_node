@@ -30,3 +30,10 @@
 ##### INSERT INTO leaderboards
 
 > INSERT INTO leaderboards(game, player, score) VALUES ('pokemon', 'Tope', 10);
+
+##### Heroku deploy
+
+heroku login
+heroku create [app name]
+git push heroku main
+heroku addons:create heroku-postgresql:hobby-dev
